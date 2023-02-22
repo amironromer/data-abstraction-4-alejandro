@@ -18,14 +18,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 # print(soup.prettify())
 #get all books
 books = soup.find_all(id="gridItemRoot")
-# print(books[15])
-# book = books[15]
 
-# csv_headers = ['rank', 'title', 'author', 'price']
-# with open('amazon_books.csv', 'a', encoding='utf-8', newline='') as f:
-#   writer = csv.writer(f)
-#   writer.writerow(['rank', 'title', 'author', 'price'])
-  
 
 
 for book in books:
@@ -40,8 +33,7 @@ for book in books:
   print(author)
   print(price)
 
-
-csv_headers = ['rank', 'title', 'author', 'price']
-with open('amazon_books.csv', 'a', encoding='utf-8', newline='') as f:
-  writer = csv.writer(f)
-  writer.writerow(['rank', 'title', 'author', 'price'])
+# csv_headers = ['rank', 'title', 'author', 'price']
+  with open('amazon_books.csv', 'a', encoding='utf-8', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow([rank, title, author, price])
